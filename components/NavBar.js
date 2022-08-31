@@ -1,36 +1,44 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { signOut } from '../utils/auth';
+import {
+  Navbar, Container, Nav,
+} from 'react-bootstrap';
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-      <div className="container-fluid">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
         <Link passHref href="/">
-          <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-            CHANGE ME
-          </a>
+          <Navbar.Brand>Wine Adventure</Navbar.Brand>
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Link passHref href="/">
-                <a className="nav-link">
-                  Home
-                </a>
-              </Link>
-            </li>
-            <button type="button" className="btn btn-danger" onClick={signOut}>
-              Sign Out
-            </button>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav className="ml-auto">
+            <Link passHref href="/">
+              <Nav.Link>Recommendations</Nav.Link>
+            </Link>
+            <Link passHref href="/wine/new">
+              <Nav.Link>Add New Wine</Nav.Link>
+            </Link>
+            <Link passHref href="/wine101">
+              <Nav.Link>Wine 101</Nav.Link>
+            </Link>
+            <Link passHref href="/profile">
+              <Nav.Link>Profile</Nav.Link>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+
+NavBar.propTypes = {
+  user: PropTypes.shape({
+    displayName: PropTypes.string,
+    photoURL: PropTypes.string,
+  }).isRequired,
+};

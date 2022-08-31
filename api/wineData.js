@@ -16,20 +16,20 @@ const getWines = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const deleteWine = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/wines/${firebaseKey}.json`)
+const deleteWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/wines/${wineFirebaseKey}.json`)
     .then(() => resolve('deleted'))
     .catch((error) => reject(error));
 });
 
-const getSingleWine = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/wines/${firebaseKey}.json`)
+const getSingleWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wine/${wineFirebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
 
 const createWine = (wineObj) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/books.json`, wineObj)
+  axios.post(`${dbUrl}/wines.json`, wineObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/wines/${response.data.name}.json`, payload)
@@ -37,8 +37,8 @@ const createWine = (wineObj) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 
-const updateWine = (wineObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/wines/${wineObj.firebaseKey}.json`, wineObj)
+const updateWine = (obj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/wine/${obj.wineFirebaseKey}.json`, obj)
     .then(resolve)
     .catch(reject);
 });
