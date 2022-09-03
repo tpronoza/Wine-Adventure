@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav,
@@ -36,9 +36,9 @@ export default function NavBar() {
   );
 }
 
-NavBar.propTypes = {
-  user: PropTypes.shape({
-    displayName: PropTypes.string,
-    photoURL: PropTypes.string,
-  }).isRequired,
-};
+// NavBar.propTypes = {
+//   user: PropTypes.shape({
+//     displayName: PropTypes.string,
+//     photoURL: PropTypes.string,
+//   }).isRequired,
+// };

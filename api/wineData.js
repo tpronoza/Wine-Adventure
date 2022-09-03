@@ -4,7 +4,26 @@ import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
 
-const getWines = (uid) => new Promise((resolve, reject) => {
+const getWines = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json`)
+    .then((response) => {
+      if (response.data) {
+        axios.get(`${dbUrl}/wines.json?`)
+          // eslint-disable-next-line no-shadow
+          .then((response) => {
+            if (response.data) {
+              // eslint-disable-next-line no-console
+              resolve(Object.values(response.data));
+            } else {
+              resolve([]);
+            }
+          })
+          .catch((error) => reject(error));
+      }
+    });
+});
+
+const getWinesByUID = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/wines.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
@@ -31,7 +50,7 @@ const getSingleWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
 const createWine = (wineObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/wines.json`, wineObj)
     .then((response) => {
-      const payload = { firebaseKey: response.data.name };
+      const payload = { wineFirebaseKey: response.data.name };
       axios.patch(`${dbUrl}/wines/${response.data.name}.json`, payload)
         .then(resolve);
     }).catch(reject);
@@ -45,6 +64,7 @@ const updateWine = (obj) => new Promise((resolve, reject) => {
 
 export {
   getWines,
+  getWinesByUID,
   createWine,
   deleteWine,
   getSingleWine,
