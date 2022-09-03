@@ -20,7 +20,7 @@ function WineCard({ wineObj, onUpdate }) {
       <Card.Img variant="top" src={wineObj.winePicture} alt=".." style={{ height: '400px' }} />
       <Card.Body>
         <h5>
-          <a href={`/wine/${wineObj?.wineFirebaseKey}`}>{wineObj.wineName} {wineObj.yearProduced}</a>
+          <a href={`/wines/${wineObj?.wineFirebaseKey}`}>{wineObj.wineName} {wineObj.yearProduced}</a>
           <p>{wineObj.wineryName}</p>
           <p>{wineObj.countryName}</p>
         </h5>
@@ -47,6 +47,7 @@ WineCard.propTypes = {
     wineryName: PropTypes.string,
     yearProduced: PropTypes.string,
     countryName: PropTypes.string,
+    wineType: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string,
     wishList: PropTypes.bool,

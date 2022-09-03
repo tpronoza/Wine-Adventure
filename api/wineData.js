@@ -23,7 +23,7 @@ const deleteWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
 });
 
 const getSingleWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/wine/${wineFirebaseKey}.json`)
+  axios.get(`${dbUrl}/wines/${wineFirebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
@@ -38,7 +38,7 @@ const createWine = (wineObj) => new Promise((resolve, reject) => {
 });
 
 const updateWine = (obj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/wine/${obj.wineFirebaseKey}.json`, obj)
+  axios.patch(`${dbUrl}/wines/${obj.wineFirebaseKey}.json`, obj)
     .then(resolve)
     .catch(reject);
 });
