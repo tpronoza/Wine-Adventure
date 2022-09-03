@@ -14,7 +14,7 @@ const initialState = {
   yearProduced: '',
   winePicture: '',
   description: '',
-  type: '',
+  wineType: '',
   price: '',
   favorite: false,
   wishList: false,
@@ -28,7 +28,7 @@ function WineForm({ wineObj }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (wineObj.wineFirebaseKey) setWineInput(wineObj);
+    if (wineObj?.wineFirebaseKey) setWineInput(wineObj);
   }, [wineObj, user]);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,20 +39,20 @@ function WineForm({ wineObj }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (wineObj.wineFirebaseKey) {
+    if (wineObj?.wineFirebaseKey) {
       updateWine(wineInput)
-        .then(() => router.push(`/wines/${wineObj.wineFirebaseKey}`));
+        .then(() => router.push(`/wine/${wineObj.wineFirebaseKey}`));
     } else {
       const payload = { ...wineInput, uid: user.uid };
       createWine(payload).then(() => {
-        router.push('/wines');
+        router.push('/');
       });
     }
   };
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{wineObj.wineFirebaseKey ? 'Update' : 'Create'} Wine </h2>
+      <h2 className="text-white mt-5">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine </h2>
       <FloatingLabel controlId="floatingInput1" label="Wine Name" className="mb-3">
         <Form.Control type="text" placeholder="Enter a Name" name="wineName" value={wineInput.wineName} onChange={handleChange} required />
       </FloatingLabel>
@@ -71,10 +71,13 @@ function WineForm({ wineObj }) {
       <FloatingLabel controlId="floatingInput6" label="Wine Price" className="mb-3">
         <Form.Control type="text" placeholder="Enter price" name="price" value={wineInput.price} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingSelect1" label="Select Wine Type">
-        <Form.Select name="position" value={wineInput.wineType} onChange={handleChange} className="mb-3" required>
+      <FloatingLabel controlId="floatingInput7" label="Wine Type: Cab, Pino Noir and etc." className="mb-3">
+        <Form.Control type="text" placeholder="Enter Wine Type" name="wineType" value={wineInput.wineType} onChange={handleChange} required />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingSelect1" label="Select Wine Category">
+        <Form.Select name="categoryName" value={wineInput.categoryName} onChange={handleChange} className="mb-3" required>
           <option disabled value="">
-            Select Wine Type
+            Select Wine Category
           </option>
           <option value="Blank"> </option>
           <option value="Red">Red</option>
@@ -125,7 +128,7 @@ function WineForm({ wineObj }) {
           wineList: e.target.checked,
         }))}
       />
-      <Button type="submit">{wineObj.wineFirebaseKey ? 'Update' : 'Create'} Wine</Button>
+      <Button type="submit">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine</Button>
     </Form>
   );
 }
@@ -137,6 +140,7 @@ WineForm.propTypes = {
     wineryName: PropTypes.string,
     yearProduced: PropTypes.string,
     countryName: PropTypes.string,
+    categoryName: PropTypes.string,
     wineType: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string,
