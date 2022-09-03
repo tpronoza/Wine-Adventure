@@ -23,15 +23,16 @@ const initialState = {
 };
 
 function WineForm({ wineObj }) {
-  const [formInput, setFormInput] = useState(initialState);
+  const [wineInput, setWineInput] = useState(initialState);
   const router = useRouter();
   const { user } = useAuth();
+
   useEffect(() => {
-    if (wineObj.wineFirebaseKey) setFormInput(wineObj);
+    if (wineObj.wineFirebaseKey) setWineInput(wineObj);
   }, [wineObj, user]);
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormInput((prevState) => ({
+    setWineInput((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -39,12 +40,12 @@ function WineForm({ wineObj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (wineObj.wineFirebaseKey) {
-      updateWine(formInput)
-        .then(() => router.push(`/wine/${wineObj.wineFirebaseKey}`));
+      updateWine(wineInput)
+        .then(() => router.push(`/wines/${wineObj.wineFirebaseKey}`));
     } else {
-      const payload = { ...formInput, uid: user.uid };
+      const payload = { ...wineInput, uid: user.uid };
       createWine(payload).then(() => {
-        router.push('/');
+        router.push('/wines');
       });
     }
   };
@@ -53,25 +54,25 @@ function WineForm({ wineObj }) {
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{wineObj.wineFirebaseKey ? 'Update' : 'Create'} Wine </h2>
       <FloatingLabel controlId="floatingInput1" label="Wine Name" className="mb-3">
-        <Form.Control type="text" placeholder="Enter a Name" name="wineName" value={formInput.wineName} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter a Name" name="wineName" value={wineInput.wineName} onChange={handleChange} required />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput2" label="Winery Name" className="mb-3">
-        <Form.Control type="text" placeholder="Enter Winery Name" name="wineryName" value={formInput.wineryName} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter Winery Name" name="wineryName" value={wineInput.wineryName} onChange={handleChange} required />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput3" label="Year" className="mb-3">
-        <Form.Control type="text" placeholder="Enter Year" name="yearProduced" value={formInput.yearProduced} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter Year" name="yearProduced" value={wineInput.yearProduced} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput3" label="Wine Picture" className="mb-3">
-        <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.winePicture} onChange={handleChange} required />
+      <FloatingLabel controlId="floatingInput4" label="Wine Picture" className="mb-3">
+        <Form.Control type="url" placeholder="Enter an image url" name="winePicture" value={wineInput.winePicture} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput4" label="Country" className="mb-3">
-        <Form.Control type="text" placeholder="Enter Country Name" name="countryName" value={formInput.countryName} onChange={handleChange} required />
+      <FloatingLabel controlId="floatingInput5" label="Country" className="mb-3">
+        <Form.Control type="text" placeholder="Enter Country Name" name="countryName" value={wineInput.countryName} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput4" label="Wine Price" className="mb-3">
-        <Form.Control type="text" placeholder="Enter price" name="price" value={formInput.price} onChange={handleChange} required />
+      <FloatingLabel controlId="floatingInput6" label="Wine Price" className="mb-3">
+        <Form.Control type="text" placeholder="Enter price" name="price" value={wineInput.price} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingSelect5" label="Select Wine Type">
-        <Form.Select name="position" value={formInput.position} onChange={handleChange} className="mb-3" required>
+      <FloatingLabel controlId="floatingSelect1" label="Select Wine Type">
+        <Form.Select name="position" value={wineInput.wineType} onChange={handleChange} className="mb-3" required>
           <option disabled value="">
             Select Wine Type
           </option>
@@ -84,7 +85,7 @@ function WineForm({ wineObj }) {
         </Form.Select>
       </FloatingLabel>
       <FloatingLabel controlId="floatingTextarea" label="WineDescription" className="mb-3">
-        <Form.Control as="textarea" placeholder="Description" style={{ height: '100px' }} name="description" value={formInput.description} onChange={handleChange} required />
+        <Form.Control as="textarea" placeholder="Description" style={{ height: '100px' }} name="description" value={wineInput.description} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
@@ -94,8 +95,8 @@ function WineForm({ wineObj }) {
         id="favorite"
         name="favorite"
         label="Is it Your Favorite?"
-        checked={formInput.favorite}
-        onChange={(e) => setFormInput((prevState) => ({
+        checked={wineInput.favorite}
+        onChange={(e) => setWineInput((prevState) => ({
           ...prevState,
           favorite: e.target.checked,
         }))}
@@ -106,8 +107,8 @@ function WineForm({ wineObj }) {
         id="wishList"
         name="wishList"
         label="Add to Wish List?"
-        checked={formInput.wishList}
-        onChange={(e) => setFormInput((prevState) => ({
+        checked={wineInput.wishList}
+        onChange={(e) => setWineInput((prevState) => ({
           ...prevState,
           wishList: e.target.checked,
         }))}
@@ -118,8 +119,8 @@ function WineForm({ wineObj }) {
         id="wineList"
         name="wineList"
         label="Add to Wine List?"
-        checked={formInput.wineList}
-        onChange={(e) => setFormInput((prevState) => ({
+        checked={wineInput.wineList}
+        onChange={(e) => setWineInput((prevState) => ({
           ...prevState,
           wineList: e.target.checked,
         }))}
@@ -136,6 +137,7 @@ WineForm.propTypes = {
     wineryName: PropTypes.string,
     yearProduced: PropTypes.string,
     countryName: PropTypes.string,
+    wineType: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string,
     wishList: PropTypes.bool,

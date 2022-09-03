@@ -14,5 +14,5 @@ export default function EditWine() {
   }, [firebaseKey, router]);
 
   // TODO: pass object to form
-  return (<WineForm obj={editWine} />);
+  return (<WineForm wineObj={editWine} />);
 }
