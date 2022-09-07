@@ -47,6 +47,42 @@ const getSingleWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getFavoriteWines = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json?orderBy="favorite"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch((error) => reject(error));
+});
+
+const getWishListWines = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json?orderBy="wishList"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch((error) => reject(error));
+});
+
+const getWineListWines = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json?orderBy="wineList"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch((error) => reject(error));
+});
+
 const createWine = (wineObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/wines.json`, wineObj)
     .then((response) => {
@@ -68,5 +104,8 @@ export {
   createWine,
   deleteWine,
   getSingleWine,
+  getFavoriteWines,
+  getWishListWines,
+  getWineListWines,
   updateWine,
 };
