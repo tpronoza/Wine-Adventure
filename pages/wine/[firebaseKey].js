@@ -19,7 +19,7 @@ export default function ViewWine() {
   return (
     <div className="mt-5 d-flex flex-wrap">
       <div className="d-flex flex-column">
-        <img src={wineDetails?.winePicture} alt={wineDetails?.countryName} style={{ width: '300px' }} />
+        <img src={wineDetails?.winePicture} alt={wineDetails?.countryName} style={{ hight: '300px', width: 'flex' }} />
       </div>
       <div className="text-white ms-5 details">
         <h5>
@@ -30,15 +30,17 @@ export default function ViewWine() {
           <p>{wineDetails?.countryName}</p>
           <p>${wineDetails?.price}</p>
         </h4>
-
       </div>
       <p>{wineDetails?.description}</p>
-
       {/*
       <WineCard
       wineObj={wineDetails}
       onUpdate={onUpdateDetails} */}
-
+      <div className="text-white ms-5 details">
+        <h5>
+          {wineDetails?.wine101Obj?.favorite ? '🤍' : ''}
+        </h5>
+      </div>
     </div>
   );
 }

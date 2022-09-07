@@ -5,7 +5,7 @@ import { getWines101 } from '../api/wine101Data';
 import Wine101Card from '../components/Wine101Card';
 import { useAuth } from '../utils/context/authContext';
 
-export default function Authors() {
+export default function Wine101() {
   const [wines101, setWine101] = useState([]);
   const { user } = useAuth();
 
