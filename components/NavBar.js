@@ -1,24 +1,51 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button, NavDropdown,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
+// import { getWines } from '../api/wineData';
+// import { useAuth } from '../utils/context/authContext';
+// import WineCard from './WineCard';
 
 export default function NavBar() {
+  // const [wines, setWines] = useState([]);
+  // const { user } = useAuth();
+
+  // const [filteredResults, setFilteredResults] = useState([]);
+  // const [searchInput, setSearchInput] = useState('');
+
+  // const getAllTheWines = () => {
+  //   getWines(user.uid).then(setWines);
+  // };
+
+  // useEffect(() => {
+  //   getAllTheWines();
+  // }, []);
+
+  // const searchItems = (searchValue) => {
+  //   setSearchInput(searchValue);
+  //   if (searchInput !== '') {
+  //     const filteredData = wines.filter((question) => Object.values(question).join('').toLowerCase().includes(searchInput.toLowerCase()));
+  //     setFilteredResults(filteredData);
+  //   } else { setFilteredResults(wines); }
+  // };
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
           <Navbar.Brand>Wine Adventure</Navbar.Brand>
         </Link>
-        <form className="d-flex search-me" role="search">
+
+        {/* <form className="d-flex search-me" role="search">
           <input className="form-control me-2" type="search" placeholder="&#128269; Search" aria-label="Search" />
-          {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
-        </form>
+          <button className="btn btn-outline-success" type="submit">Search</button>
+        </form> */}
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Nav className="ml-auto">
@@ -59,9 +86,9 @@ export default function NavBar() {
   );
 }
 
-NavBar.propTypes = {
-  user: PropTypes.shape({
-    displayName: PropTypes.string,
-    photoURL: PropTypes.string,
-  }).isRequired,
-};
+// NavBar.propTypes = {
+//   user: PropTypes.shape({
+//     displayName: PropTypes.string,
+//     photoURL: PropTypes.string,
+//   }).isRequired,
+// };

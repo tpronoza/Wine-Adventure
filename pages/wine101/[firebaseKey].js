@@ -24,9 +24,9 @@ export default function ViewWine101() {
         <h5>
           <p>{wine101Details?.articleName}</p>
         </h5>
-        <h7>
+        <h6>
           <p>{wine101Details?.context}</p>
-        </h7>
+        </h6>
         {/* <h4>
           <Link>{wine101Details?.articleLink}</Link>
         </h4> */}
