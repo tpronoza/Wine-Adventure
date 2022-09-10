@@ -48,15 +48,33 @@ const getSingleWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
 });
 
 const getFavoriteWines = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/wines.json?orderBy="favorite"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+  axios.get(`${dbUrl}/wines.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
-        resolve(Object.values(response.data));
-      } else {
-        resolve([]);
+        axios.get(`${dbUrl}/wines.json?orderBy="uid"&equalTo="${uid}"`);
+        axios.get(`${dbUrl}/wines.json?orderBy="favorite"&equalTo=true`)
+          // eslint-disable-next-line no-shadow
+          .then((response) => {
+            if (response.data) {
+              // eslint-disable-next-line no-console
+              resolve(Object.values(response.data));
+            } else {
+              resolve([]);
+            }
+          })
+          .catch((error) => reject(error));
       }
-    })
-    .catch((error) => reject(error));
+    });
+
+  // axios.get(`${dbUrl}/wines.json?orderBy="favorite"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+  //   .then((response) => {
+  //     if (response.data) {
+  //       resolve(Object.values(response.data));
+  //     } else {
+  //       resolve([]);
+  //     }
+  //   })
+  //   .catch((error) => reject(error));
 });
 
 const getWishListWines = (uid) => new Promise((resolve, reject) => {
