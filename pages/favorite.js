@@ -17,13 +17,13 @@ function Favorite() {
 
   useEffect(() => {
     getAllFavoriteWines();
-  }, [favorites]);
+  }, []);
 
   return (
     <div className="text-center my-4">
       <div className="d-flex flex-wrap">
         {favorites?.map((favoriteWine) => (
-          <WineCard key={favoriteWine.firebaseKey} wineObj={favoriteWine} onUpdate={getAllFavoriteWines} />
+          <WineCard key={favoriteWine?.firebaseKey} wineObj={favoriteWine} onUpdate={getAllFavoriteWines} />
         ))}
       </div>
     </div>

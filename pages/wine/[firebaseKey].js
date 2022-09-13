@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { getSingleWine } from '../../api/wineData';
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
+import { getSingleWine, deleteWine } from '../../api/wineData';
+
 // import WineCard from '../../components/WineCard';
 
 export default function ViewWine() {
@@ -10,6 +13,12 @@ export default function ViewWine() {
 
   // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
+
+  const deleteThisWine = () => {
+    if (window.confirm(`Delete ${wineDetails.wineName}?`)) {
+      deleteWine(wineDetails.wineFirebaseKey);
+    }
+  };
 
   // TODO: make call to API layer to get the data
   useEffect(() => {
@@ -30,17 +39,31 @@ export default function ViewWine() {
           <p>{wineDetails?.countryName}</p>
           <p>${wineDetails?.price}</p>
         </h4>
+        <>
+          <p><Button className="card-text bold">{wineDetails?.favorite ? '🤍' : ' ' }</Button> Favorite</p>
+          <p><Button type="button" className="card-text">{wineDetails?.wishList ? '🏷️' : ' ' }</Button> WishList</p>
+          <p><Button className="card-text bold">{wineDetails?.wineList ? '🏷️🏷️' : ' ' }</Button> WineList</p>
+        </>
       </div>
       <p>{wineDetails?.description}</p>
-      {/*
-      <WineCard
+
+      {/* <WineCard
       wineObj={wineDetails}
-      onUpdate={onUpdateDetails} */}
-      <div className="text-white ms-5 details">
+      onUpdate={onUpdateDetails} /> */}
+
+      <div>
+        <Link href={`/wine/edit/${wineDetails?.wineFirebaseKey}`} passHref>
+          <Button variant="outline-info">EDIT</Button>
+        </Link>
+        <Link href="/" passHref>
+          <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
+        </Link>
+      </div>
+      {/* <div className="text-white ms-5 details">
         <h5>
           {wineDetails?.wine101Obj?.favorite ? '🤍' : ''}
         </h5>
-      </div>
+      </div> */}
     </div>
   );
 }

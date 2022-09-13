@@ -1,15 +1,26 @@
-import React from 'react';
+// import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-// import { BsFillBookmarkPlusFill } from 'react-icons/bs';
+import {
+// BsFillBookmarkPlusFill,
+// BsBookmarkDash,
+// IoMdHeart,
+// IoMdHeartEmpty,
+// IoIosListBox,
+// IoIosList,
+} from 'react-icons/io';
 import { deleteWine } from '../api/wineData';
 
 function WineCard({ wineObj, onUpdate }) {
   const { uid } = firebase.auth().currentUser;
+  // const [click, setClick] = useState(false);
+
+  // const handleClick = () => setClick(!click);
+
   const deleteThisWine = () => {
     if (window.confirm(`Delete ${wineObj.wineName}?`)) {
       deleteWine(wineObj.wineFirebaseKey).then(() => onUpdate());
@@ -25,13 +36,25 @@ function WineCard({ wineObj, onUpdate }) {
           <p key="{wineObj?.wineryName}">{wineObj?.wineryName}</p>
           <p key="{wineObj?.countryName}">{wineObj?.countryName}</p>
 
-          {uid === wineObj?.uid ? (
-            <>
-              <p><Button className="card-text bold">{wineObj?.favorite ? '🤍' : ' ' }</Button></p>
-              <p><Button className="card-text">{wineObj?.wishList ? '🏷️' : '' }</Button></p>
-              <p><Button className="card-text bold">{wineObj?.wineList ? '🏷️' : '' }</Button></p>
-            </>
-          ) : null}
+          {/* <div className="favoriteList">
+            {click ? <IoMdHeart onClick={handleClick} />
+              : <IoMdHeartEmpty onClick={handleClick} />}
+          </div> */}
+          {/* <div className="wineList">
+            {click ? <IoIosListBox onClick={handleClick} />
+              : <IoIosList onClick={handleClick} />}
+          </div>
+          <div className="wishList">
+            {click ? <BsFillBookmarkPlusFill onClick={handleClick} />
+              : <BsBookmarkDash onClick={handleClick} />}
+          </div> */}
+          {/* {uid === wineObj?.uid ? ( */}
+          <>
+            <p><Button className="card-text bold">{wineObj?.favorite ? '🤍' : ' ' }</Button>Favorite</p>
+            <p><Button type="button" className="card-text">{wineObj?.wishList ? '🏷️' : ' ' }</Button>WishList</p>
+            <p><Button className="card-text bold">{wineObj?.wineList ? '🏷️🏷️' : ' ' }</Button>WineList</p>
+          </>
+          {/* ) : null}  */}
         </h5>
         {/* <>
           <button type="button" className="icons btn btn-light">
