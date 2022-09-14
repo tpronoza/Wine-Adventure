@@ -52,7 +52,7 @@ function WineForm({ wineObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine </h2>
+      <h2 className="text-black mt-5">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine </h2>
       <FloatingLabel controlId="floatingInput1" label="Wine Name" className="mb-3">
         <Form.Control type="text" placeholder="Enter a Name" name="wineName" value={wineInput.wineName} onChange={handleChange} required />
       </FloatingLabel>
@@ -93,7 +93,7 @@ function WineForm({ wineObj }) {
 
       {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
       <Form.Check
-        className="text-white mb-3"
+        className="text-black mb-3"
         type="switch"
         id="favorite"
         name="favorite"
@@ -105,7 +105,7 @@ function WineForm({ wineObj }) {
         }))}
       />
       <Form.Check
-        className="text-white mb-3"
+        className="text-black mb-3"
         type="switch"
         id="wishList"
         name="wishList"
@@ -117,7 +117,7 @@ function WineForm({ wineObj }) {
         }))}
       />
       <Form.Check
-        className="text-white mb-3"
+        className="text-black mb-3"
         type="switch"
         id="wineList"
         name="wineList"
@@ -128,7 +128,9 @@ function WineForm({ wineObj }) {
           wineList: e.target.checked,
         }))}
       />
+      {/* <div className="btn-group-vertical"> */}
       <Button type="submit">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine</Button>
+      {/* </div> */}
     </Form>
   );
 }

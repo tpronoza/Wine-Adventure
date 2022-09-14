@@ -2,7 +2,7 @@
   "-MiBsfuTafbEQ7eAULxV": {
     "wine101FirebaseKey": "-MiBsfuTafbEQ7eAULxV",
     "articleName": "Wine Tasting Terms - All You Need To Know",
-    "context": "Wine tasting, like many other subjects, has its own vocabulary.",
+    "context": "Wine tasting, like many other subjects, has its own vocabulary. On your next visit to wine country, why not ask for a chance to taste wine straight from the barrel? Though the tasting will be unlike anything you experience from a bottle, it will be fun and memorable. And members, remember your member benefit: Let us know when you are traveling to wine country so we can arrange a VIP Tasting for you. ",
     "articleImage": "https://cdn.shopify.com/s/files/1/0123/4459/0400/files/shutterstock_579707302_large.jpg?v=1559060477",
     "articleLink": "https://www.cawineclub.com/wine-tasting-terms",
     "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
@@ -10,15 +10,15 @@
   "-MiBv9_aOEJQWoobjz_U": {
     "wine101FirebaseKey": "-MiBv9_aOEJQWoobjz_U",
     "articleName": "How to Pair Wine with Food - Wine Paring Basics",
-    "context": "Wine Pairing Guide",
+    "context": "Wine pairing is a delicate process of combining food dishes with the perfect wine to help elevate the dining experience. Food and wine pairing has been a technique of matching complementary flavors with the goal of heightening enjoyment of each component. The concept can be applied when matching wines with various dishes. Wine pairing is not only about matching food and wine solely for their excellence, but also to maximize the value that each component brings to the whole experience.Read on to discover everything you need to know about pairing food with wine, finding the best wine pairing with Salmon, the best dishes to eat with a Sauvignon Blanc, to the top two methods of pairing. ",
     "articleImage": "https://cdn.shopify.com/s/files/1/0123/4459/0400/files/shutterstock_558541504_large.jpg?v=1558636171",
     "articleLink": "https://www.thewinecellargroup.com/wine-pairing-tips-for-beginners/",
-    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
   },
   "-MiBw4tCvNZd23yTVDQw": {
     "wine101FirebaseKey": "-MiBw4tCvNZd23yTVDQw",
     "articleName": "Wine Kit Instructions - How To Make Your Own Wine",
-    "context": "How To Make Your Own Wine",
+    "context": "How To Make Your Own Wine Equipment Needed: Fermenter, Carboy, Airlock & Rubbery Bung, Siphon Assembly, Hydrometer & Test Cylinder, Floating Thermometer, Wine Thief, Measuring Cup, Spoon, Wine Bottles & Enclosures, Wine Log Bag",
     "articleImage": "https://cdn.shopify.com/s/files/1/0123/4459/0400/files/shutterstock_507753670_large.jpg?v=1555597694",
     "articleLink": "https://craftedseries.com/blogs/news/wine-kit-instructions-how-to-make-your-own-wine",
     "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
@@ -26,9 +26,113 @@
   "-N3j90_NfWjrldj7uL35": {
     "wine101FirebaseKey": "-N3j90_NfWjrldj7uL35",
     "articleName": "Wine Basics - Everything You Need to Know About Wine",
-    "context": "Learn about all types of wines. Whether you are a new wine drinker or a wine connoisseur, here is a round-up of info about wine.",
+    "context": "There are so many different types of wine, its hard to keep them straight. But you dont have to be a sommelier to understand the basics of wine, wine types, and flavors! Im here to teach you a thing or two about wine, so you can easily impress your friends and dinner guests when you order the perfect bottle. Or at the very least, youll be able to nod along at that wine tasting and know what they are talking about when they hand you a glass of Merlot. Im not claiming to be a wine EXPERT here, but I do have enough experience drinking it to go around. So sit back and take notes because this is WINE 101 for all the beginners out there.",
     "articleImage": "https://cdn.shopify.com/s/files/1/0123/4459/0400/files/zachariah-hagy-484678-unsplash_large.jpg?v=1552075739",
     "articleLink": "https://www.thecookierookie.com/wine-101-types-of-wines-beginners/",
     "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-N3j30_MfHjrldj7uL73": {
+    "wine101FirebaseKey": "-N3j30_MfHjrldj7uL73",
+    "articleName": "Various Wine Articles to Help you Learn, Understand and Enjoy Wine",
+    "context": "This page offers a myriad of easy to read articles to help you better understand, learn about and enjoy wine. You will also find articles written to help you start a wine collection, cellar your wine, serve you wine and if you find you have too much wine, to help you sell your wine as well.  All wine lovers start out the same way. We are moved by the simple act of tasting a wine. There is something in that wine that captures our attention. It could be the aromas, the texture on your palate, or just the moment frozen in time that leaves you wanting to repeat that experience. In time, something else happens to every wine lover.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2016/03/Understanding-Wine.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-education-articles/various-wine-articles-to-help-you-learn-understand-and-enjoy-wine/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
+  },
+  "-MiBv7_aOEJQRockjz_Z": {
+    "wine101FirebaseKey": "-MiBv7_aOEJQRockjz_Z",
+    "articleName": "Learn Everything About Wine in the Guide to Understanding Wine",
+    "context": "Wine is many things to many people. It is a passion, career, hobby, beverage, meal accompaniment, investment or simply a fun way to take away from the drudgeries of everyday life. For others it is a place holder, allowing them to remember events and there are those to simply enjoy its hedonistic pleasures.  Regardless of how you look at wine, there is always something new for everyone to learn about wine. This page offers you several articles to help you learn about wine. We cover tips on how to taste wine as well as talk or write about your wine tasting experience. ",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2016/02/Wine-Education-Learn-about-Wine.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-education-articles/learn-wine-guide-understanding-wine/",
+    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-N3j30_HfWjrldj7uW73": {
+    "wine101FirebaseKey": "-N3j30_HfWjrldj7uW73",
+    "articleName": "Wine Aroma Wheel from UC Davis",
+    "context": "The Davis Wine Aroma Wheel is the perfect way for wine lovers to get a look at the numerous fragrances and flavors found in most wines. Each of these unique fragrances found in wine, are due to the grapes being used in the production of the wine, coupled with the soils and terroir or soil the grapes were planted in and the choices made by the wine maker. The graphs and information found on the wine aroma wheel will help you identify what you are tasting and smelling. For tips on becoming a better wine taster: How to taste wine  The Davis Wine Aroma Wheel is divided into several sections to help you visualize the different flavors, scents and aromatic qualities found in most red and white wines, regardless of the grape variety.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2010/05/Davis-Wine-Aroma-Wheel1.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-educational-questions/davis-aroma-wheel/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
+  },
+  "-QiDsfuUafbEL7eAsLx9": {
+    "wine101FirebaseKey": "-QiDsfuUafbEL7eAsLx9",
+    "articleName": "What is the Difference Between Right Bank and Left Bank Bordeaux Wine",
+    "context": "There is a big difference between wines from the Right Bank and Left Bank, or should I say, there are several important distinctions between Bordeaux wines from the Left Bank and Bordeaux from the Right Bank. The terroir and soil are different. The percentages of grapes planted are not the same.The culture of each region differs and because each area has its own unique style and character, as you might expect, the wines are quite different as well. The wines from each area taste, smell, feel and age differently. And that is just to get things started. So, as you can see, there are very important differences between wines from the Left Bank of Bordeaux, when compared with wines from the Right Bank of Bordeaux",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2016/03/Left-Bank-Right-Bank-Wines.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/what-is-the-difference-between-right-bank-and-left-bank-bordeaux-wine/",
+    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-AiBsboosbEQ7eAQLx8": {
+    "wine101FirebaseKey": "-AiBsboosbEQ7eAQLx8",
+    "articleName": "Guide to Aging Tasting Cellaring Enjoying Collecting Older Mature Wine",
+    "context": "Collecting and aging wine.  The best wine tasting experiences I have had the pleasure of enjoying have all been from older, mature bottles of wine. Depending on the producer, the vintage and the region, the definition of older and mature ranges from 10 to 100 years.  Not every wine lover is going to agree. In fact, the majority of younger wine lovers just discovering their passion for wine most often prefer fresh, up front fruit and the primary aromatics enjoyed in young wines.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2013/09/Wine-Cellar-Bordeaux.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-educational-questions/guide-aging-tasting-cellaring-enjoying-collecting-older-mature-wine/",
+    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-ViZsfuTafbFA7eCUP3Q": {
+    "wine101FirebaseKey": "-ViZsfuTafbFA7eCUP3Q",
+    "articleName": "Selling Wine, Guide to How, When, Where and Why of Selling Your Wine",
+    "context": "Most people start buying and collecting wine because they love it. Some of those buyers, eventually purchases more wine than they could ever drink. Or they age out of their cellar. Perhaps some wines that you bought in their youth have appreciated so much in price, they are beyond the price you feel OK about opening.  Maybe, there are wines you once were quite fond of, but they are no longer the style of wine you like to drink. There are also some wine collectors that just need the money for any number of reasons.  If you are thinking of selling some, or all of your wines, there are several different ways to go about it.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2016/03/WIne-Cellar.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-educational-questions/selling-wine-guide-to-how-when-where-and-why-of-selling-your-wine/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
+  },
+  "-PiTsfuBafbUL7eLOXx3": {
+    "wine101FirebaseKey": "-PiTsfuBafbUL7eLOXx3",
+    "articleName": "Complete Guide to Properly Cellaring Wine and Aging Wine",
+    "context": "9% of the worlds wine does not need cellaring. Most wines are in fact at their peak the day they are released. You also need to consider that almost every bottle of wine is purchased either the day it is intended to be consumed, or shorty thereafter.  However, a small amount of great wine is produced that ages and improves with age and proper cellaring. The aging and cellaring of those wines are the focus of this article.  Wine is a living thing. It changes with time in the bottle. Depending on the wine, it can take from years to decades for the molecular structure to change.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2013/09/Bordeaux-wine-cellar.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-educational-questions/guide-properly-cellaring-wine-aging-wine/",
+    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-UiCsfuFafbEQ7eKTHxA": {
+    "wine101FirebaseKey": "-UiCsfuFafbEQ7eKTHxA",
+    "articleName": "Kosher Bordeaux Wine The Complete Guide to all the Best Kosher Bordeaux",
+    "context": "Learn Everything About Kosher Bordeaux Wine, Winemakng and Vineyards  There is a long history of producing Kosher Bordeaux wine. However, due to the difficulty of production and a lack of demand, Kosher Bordeaux wine remains a niche product.  A myriad of chateaux in every region has endeavored to produce Kosher Bordeaux wine from time to time. Some estates continue to make a small amount of Kosher wine, other properties have only made a Kosher Bordeaux in a single vintage.  Numerous Bordeaux chateaux have made Kosher wine. In fact, at various times, almost 50 different estates have made Kosher Bordeaux wine. While there are some large 1855 Classified Growths that make Kosher Bordeaux wine, most of the estates producing Kosher Bordeaux wine are small.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2015/01/Kosher-Bordeaux-Wine-300x224.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/bordeaux-wine-producer-profiles/bordeaux/winery-profiles-alphabetical-grouped-by-region/complete-guide-kosher-bordeaux-wine/",
+    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-NiSgfaSafbFU7eGHLpA": {
+    "wine101FirebaseKey": "-NiSgfaSafbFU7eGHLpA",
+    "articleName": "Everything You Need to Know about How to read French Wine Labels",
+    "context": "Its easy to read French wine labels, once you get the hang of it and learn a few simple phrases. Understanding a few terms, words phrases you need for reading French wine labels is much easier than it first looks.  This page will explain everything you need to know about how to read a Bordeaux wine label. How to read a Rhone wine label or how to read a Burgundy wine label. In fact, by the time you finish reading this easy to follow and read article, you will know everything you need to know about how to read French wine labels.  French wine labeling laws, or perhaps I should say, European wine labeling laws provide more information to the buyer than you usually find on American wine bottles. Thats why its important to get a handle on how to read French wine labels.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2014/02/Bordeaux-wine-label.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-educational-questions/everything-need-know-read-french-wine-labels/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
+  },
+  "-S7c90_NfFhold07cK39": {
+    "wine101FirebaseKey": "-S7c90_NfFhold07cK39",
+    "articleName": "Buying Wine En Primeur, Wine Futures, Pre Arrival Wines Explained",
+    "context": "Buying wine En Primeur has been a custom in Europe for hundreds of years. While it has been taking place in America since Thomas Jefferson went to France and placed orders for Bordeaux wine to be delivered a few years later, few Americans purchased much wine as a future, or as pre-arrivals before the 1982 vintage.  The difference between buying wine En Primeur, or as futures and pre arrival. Buying wine En Primeur or purchasing wine futures are the same thing. When you buy wine En Primeur or as a future, the wines are still in the barrel.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2016/03/Buying-Wine-En-Primeur-or-as-Futures.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-education-articles/buying-wine-en-primeur-wine-futures-pre-arrival-wines-explained/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
+  },
+  "-DiEv9_aBILuSuatjl_A": {
+    "wine101FirebaseKey": "-DiEv9_aBILuSuatjl_A",
+    "articleName": "The Taste of Bordeaux Wine its Characteristics and Styles",
+    "context": "Bordeaux remains the worlds most popular wine for many reasons, starting with the unique taste, character and style found in Bordeaux wine. There are many reasons why Bordeaux remains popular, but it all starts with the taste of Bordeaux wine.  What does Bordeaux wine taste like?  Keep in mind, close to 7,500 different producers make almost 10,000 different Bordeaux wines, so there is no simple explanation as to the taste of Bordeaux wine.  However, the taste of Bordeaux wine can be broken down to young Bordeaux wine, older Bordeaux wine, Bordeaux blends dominated by Cabernet Sauvignon, Bordeaux blends dominated by Merlot, dry white Bordeaux wine and sweet, Bordeaux wine. For tips on becoming a better wine taster: Discovering how to taste Bordeaux wine",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2013/10/Taste-of-Bordeaux-wine-300x234.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/taste-bordeaux-wine-characteristics-styles/",
+    "uid": "99EdCviwJLaCjWtaU2rU1nK44fw1"
+  },
+  "-CiSv9_tVILaDuatpl_E": {
+    "wine101FirebaseKey": "-CiSv9_tVILaDuatpl_E",
+    "articleName": "1855 Bordeaux Classification of the Medoc, Official History",
+    "context": "The Bordeaux 1855 Classification The Complete Guide to the historic, 1855 Bordeaux Classification of the wines of Bordeaux from the Medoc.  The historic 1855 Bordeaux Classification stands as the single most important and famous classification of any wine region in the world. Almost 160 years later, this historic document continues to stand the test of time, with almost no changes. In fact, since 1855, the official classification of Bordeaux wines from the Medoc has only allowed two modifications in almost 160 years!  Chateau Cantemerle was added in 1856, for the simple reason that it was left off by accident in 1855!",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2010/06/bordeaux-street-300x247.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/bordeaux-wine-producer-profiles/bordeaux/1855-bordeaux-classification/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
+  },
+  "-PiTsfuBafbUL7eLswx5": {
+    "wine101FirebaseKey": "-PiTsfuBafbUL7eLswx5",
+    "articleName": "New York Wines, Wineries, Wine Making History of New York",
+    "context": "New York Wines, Wineries and Wine Making History of New York offers a detailed look at the growing popularity of the red and white wines produced in New York state with a focus on the wine from the AVAs of Long Island, Finger Lakes region, Lake Erie and the Hudson River region. The history, terroir, wines and laws of the region, as well as wine making, wineries and styles of wine being produced in New York state are discussed in detail on this page.",
+    "articleImage": "https://www.thewinecellarinsider.com/wp-content/uploads/2011/11/Ny-Wines-2-300x225.jpg",
+    "articleLink": "https://www.thewinecellarinsider.com/wine-topics/wine-educational-questions/the-wines-wineries-and-wine-making-history-of-new-york/",
+    "uid": "lLWVgNu7L8R2pglvp67VHBYWp033"
   }
 }

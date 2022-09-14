@@ -28,19 +28,19 @@ function WineCard({ wineObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '40rem', margin: '10px', textAlign: 'left' }}>
-      <Card.Img variant="top" src={wineObj?.winePicture} alt=".." style={{ height: '300px', width: '35%', margin: '10px' }} />
+    <Card style={{ width: '35rem', margin: '10px', textAlign: 'left' }}>
+      <Card.Img variant="top" src={wineObj?.winePicture} alt=".." style={{ height: '230px', width: '35%', margin: '10px' }} />
       <Card.Body>
         <h5>
           <a href={`/wine/${wineObj?.wineFirebaseKey}`}>{wineObj?.wineName} {wineObj?.yearProduced}</a>
           <p key="{wineObj?.wineryName}">{wineObj?.wineryName}</p>
           <p key="{wineObj?.countryName}">{wineObj?.countryName}</p>
-
-          {/* <div className="favoriteList">
+        </h5>
+        {/* <div className="favoriteList">
             {click ? <IoMdHeart onClick={handleClick} />
               : <IoMdHeartEmpty onClick={handleClick} />}
           </div> */}
-          {/* <div className="wineList">
+        {/* <div className="wineList">
             {click ? <IoIosListBox onClick={handleClick} />
               : <IoIosList onClick={handleClick} />}
           </div>
@@ -48,14 +48,13 @@ function WineCard({ wineObj, onUpdate }) {
             {click ? <BsFillBookmarkPlusFill onClick={handleClick} />
               : <BsBookmarkDash onClick={handleClick} />}
           </div> */}
-          {/* {uid === wineObj?.uid ? ( */}
-          <>
-            <p><Button className="card-text bold">{wineObj?.favorite ? '🤍' : ' ' }</Button>Favorite</p>
-            <p><Button type="button" className="card-text">{wineObj?.wishList ? '🏷️' : ' ' }</Button>WishList</p>
-            <p><Button className="card-text bold">{wineObj?.wineList ? '🏷️🏷️' : ' ' }</Button>WineList</p>
-          </>
-          {/* ) : null}  */}
-        </h5>
+        {/* {uid === wineObj?.uid ? ( */}
+        <div className="btn-group-vertical">
+          <p><Button className="card-text">{wineObj?.favorite ? '🤍' : ' ' }</Button> Favorite</p>
+          <p><Button type="button" className="card-text">{wineObj?.wishList ? '🏷️' : ' ' }</Button> WishList</p>
+          <p><Button className="card-text bold">{wineObj?.wineList ? '🏷️🏷️' : ' ' }</Button> WineList</p>
+        </div>
+        {/* ) : null}  */}
         {/* <>
           <button type="button" className="icons btn btn-light">
             <h3><BsFillBookmarkPlusFill /></h3>
@@ -64,12 +63,12 @@ function WineCard({ wineObj, onUpdate }) {
 
         <p className="card-text">{wineObj?.description}</p>
         {uid === wineObj?.uid ? (
-          <>
+          <div className="btn-group-horizontal">
             <Link href={`/wine/edit/${wineObj?.wineFirebaseKey}`} passHref>
               <Button variant="outline-info">EDIT</Button>
             </Link>
             <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
-          </>
+          </div>
         ) : null}
 
       </Card.Body>
