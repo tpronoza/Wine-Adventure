@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 // import firebase from 'firebase/app';
-import { getFavoriteWines } from '../api/wineData';
+import { getFavoriteWinesByUser } from '../api/wineData';
 import { useAuth } from '../utils/context/authContext';
 import WineCard from '../components/WineCard';
 
@@ -12,7 +12,7 @@ function Favorite() {
   // const { uid } = firebase.auth().currentUser;
 
   const getAllFavoriteWines = () => {
-    getFavoriteWines(user.uid).then(setFavorites);
+    getFavoriteWinesByUser(user.uid).then(setFavorites);
   };
 
   useEffect(() => {

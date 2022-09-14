@@ -36,7 +36,7 @@ function Wine101Form({ wine101Obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createWine101(payload).then(() => {
-        router.push('/');
+        router.push('/wine101');
       });
     }
   };

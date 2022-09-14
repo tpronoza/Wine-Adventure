@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { getWishListWines } from '../api/wineData';
+import { getWishListWinesByUser } from '../api/wineData';
 import { useAuth } from '../utils/context/authContext';
 import WineCard from '../components/WineCard';
 
@@ -9,7 +9,7 @@ function WishList() {
   const { user } = useAuth();
 
   const getAllWishListWines = () => {
-    getWishListWines(user.uid).then(setWishList);
+    getWishListWinesByUser(user.uid).then(setWishList);
   };
 
   useEffect(() => {

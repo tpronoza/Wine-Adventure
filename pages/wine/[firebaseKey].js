@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import firebase from 'firebase/app';
 import { getSingleWine, deleteWine } from '../../api/wineData';
 
 // import WineCard from '../../components/WineCard';
 
 export default function ViewWine() {
+  const { uid } = firebase.auth().currentUser;
   const [wineDetails, setWineDetails] = useState({});
   const router = useRouter();
 
@@ -50,15 +52,16 @@ export default function ViewWine() {
       {/* <WineCard
       wineObj={wineDetails}
       onUpdate={onUpdateDetails} /> */}
-
-      <div>
-        <Link href={`/wine/edit/${wineDetails?.wineFirebaseKey}`} passHref>
-          <Button variant="outline-info">EDIT</Button>
-        </Link>
-        <Link href="/" passHref>
-          <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
-        </Link>
-      </div>
+      {uid === wineDetails?.uid ? (
+        <div>
+          <Link href={`/wine/edit/${wineDetails?.wineFirebaseKey}`} passHref>
+            <Button variant="outline-info">EDIT</Button>
+          </Link>
+          <Link href="/" passHref>
+            <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
+          </Link>
+        </div>
+      ) : null}
       {/* <div className="text-white ms-5 details">
         <h5>
           {wineDetails?.wine101Obj?.favorite ? '🤍' : ''}

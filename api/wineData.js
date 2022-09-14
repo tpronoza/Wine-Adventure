@@ -47,58 +47,60 @@ const getSingleWine = (wineFirebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const getFavoritesByUser = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/wines.json?orderBy="uid"&equalTo="${uid}"`)
+const getFavoriteWines = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json?orderBy="favorite"&equalTo=true`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
       } else {
         resolve([]);
       }
-    })
+    }).catch((error) => reject(error));
+});
+
+const getFavoriteWinesByUser = (uid) => new Promise((resolve, reject) => {
+  getFavoriteWines().then((favoriteWines) => {
+    const filteredFavoriteWines = favoriteWines.filter((favoriteWine) => favoriteWine.uid === uid);
+    resolve(filteredFavoriteWines);
+  })
     .catch((error) => reject(error));
 });
 
-const getFavoriteWines = async (uid) => {
-  // const getUsersLikedVideos = async (uid) => {
-  const userFavorites = await getFavoritesByUser(uid);
-  const favoriteWines = userFavorites.map((favorite) => favorite.wineFirebaseKey);
-  const favoriteObjects = await favoriteWines.map((wineFirebaseKey) => getSingleWine(wineFirebaseKey));
-  const favoriteObjectArray = await Promise.all(favoriteObjects);
-  return favoriteObjectArray;
-};
-  // axios.get(`${dbUrl}/wines.json?orderBy="favorite"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
-  //   .then((response) => {
-  //     if (response.data) {
-  //       resolve(Object.values(response.data));
-  //     } else {
-  //       resolve([]);
-  //     }
-  //   })
-  //   .catch((error) => reject(error));
-// });
-
-const getWishListWines = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/wines.json?orderBy="wishList"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+const getWishListWines = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json?orderBy="wishList"&equalTo=true`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
       } else {
         resolve([]);
       }
-    })
+    }).catch((error) => reject(error));
+});
+
+const getWishListWinesByUser = (uid) => new Promise((resolve, reject) => {
+  getWishListWines().then((wishListWines) => {
+    const filteredwishListWines = wishListWines.filter((wishListWine) => wishListWine.uid === uid);
+    resolve(filteredwishListWines);
+  })
     .catch((error) => reject(error));
 });
 
-const getWineListWines = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/wines.json?orderBy="wineList"&equalTo=true&orderBy="uid"&equalTo="${uid}"`)
+const getWineListWines = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/wines.json?orderBy="wineList"&equalTo=true`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
       } else {
         resolve([]);
       }
-    })
+    }).catch((error) => reject(error));
+});
+
+const getWineListWinesByUser = (uid) => new Promise((resolve, reject) => {
+  getWishListWines().then((wineListWines) => {
+    const filteredwineListWines = wineListWines.filter((wineListWine) => wineListWine.uid === uid);
+    resolve(filteredwineListWines);
+  })
     .catch((error) => reject(error));
 });
 
@@ -125,6 +127,9 @@ export {
   getSingleWine,
   getFavoriteWines,
   getWishListWines,
+  getWishListWinesByUser,
   getWineListWines,
+  getWineListWinesByUser,
   updateWine,
+  getFavoriteWinesByUser,
 };

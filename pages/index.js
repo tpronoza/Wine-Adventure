@@ -37,7 +37,7 @@ function Home() {
   return (
     <>
       <div className="text-center my-4">
-        <title>Stack Overflow </title>
+        <title>Wine Adventure </title>
         <Form.Control icon="search" placeholder="Search Wine" onChange={(e) => searchItems(e.target.value)} />
         {searchInput.length > 1 ? (
           <div className="d-flex flex-wrap">
