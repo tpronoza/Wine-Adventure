@@ -16,7 +16,8 @@ function Wine101Card({ wine101Obj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '40rem', margin: '10px', textAlign: 'left' }}>
+
+    <Card style={{ width: '35rem', margin: '10px', textAlign: 'left' }}>
       <Card.Img variant="top" src={wine101Obj?.articleImage} alt=".." style={{ height: '400px' }} />
       <Card.Body>
         <h5>
@@ -31,7 +32,6 @@ function Wine101Card({ wine101Obj, onUpdate }) {
             <Button variant="danger" onClick={deleteThisWine101} className="m-2">DELETE</Button>
           </>
         ) : null}
-
       </Card.Body>
     </Card>
   );

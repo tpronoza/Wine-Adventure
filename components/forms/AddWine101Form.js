@@ -43,7 +43,7 @@ function Wine101Form({ wine101Obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{wine101Obj?.wine101FirebaseKey ? 'Update' : 'Create'} Wine Article</h2>
+      <h2 className="text-black mt-5">{wine101Obj?.wine101FirebaseKey ? 'Update' : 'Create'} Wine Article</h2>
       <FloatingLabel controlId="floatingInput1" label="Wine Article Title" className="mb-3">
         <Form.Control type="text" placeholder="Enter Article Title " name="articleName" value={formInput.articleName} onChange={handleChange} required />
       </FloatingLabel>
