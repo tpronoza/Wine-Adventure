@@ -11,6 +11,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  border-radius: 20%/50%;
 }
 
 * {
@@ -18,5 +19,30 @@ a {
 }
 
 body {
-  background-color: #e8e6e5;
+  background-color: #d5c0c0;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  /* position: fixed;
+  top: 0;
+  z-index: 1; */
+  background-color: rgb(51, 2, 2);
+}
+
+.columnOne {
+  display: inline;
+  margin-right: 20px;
+}
+.columnTwo {
+  display: inline;
+  margin-left: 20px;
+  width: 50rem;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

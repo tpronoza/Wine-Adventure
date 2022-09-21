@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createWine, updateWine } from '../../api/wineData';
+import getCategories from '../../api/categoryData';
 
 const initialState = {
   wineName: '',
@@ -24,10 +25,12 @@ const initialState = {
 
 function WineForm({ wineObj }) {
   const [wineInput, setWineInput] = useState(initialState);
+  const [categories, setCategories] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
+    getCategories().then(setCategories);
     if (wineObj?.wineFirebaseKey) setWineInput(wineObj);
   }, [wineObj, user]);
   const handleChange = (e) => {
@@ -74,7 +77,7 @@ function WineForm({ wineObj }) {
       <FloatingLabel controlId="floatingInput7" label="Wine Type: Cab, Pino Noir and etc." className="mb-3">
         <Form.Control type="text" placeholder="Enter Wine Type" name="wineType" value={wineInput.wineType} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingSelect1" label="Select Wine Category">
+      {/* <FloatingLabel controlId="floatingSelect1" label="Select Wine Category">
         <Form.Select name="categoryName" value={wineInput.categoryName} onChange={handleChange} className="mb-3" required>
           <option disabled value="">
             Select Wine Category
@@ -86,7 +89,19 @@ function WineForm({ wineObj }) {
           <option value="Sparkling">Sparkling</option>
           <option value="Dessert">Dessert</option>
         </Form.Select>
+      </FloatingLabel> */}
+
+      <FloatingLabel controlId="floatingSelect" label="Category">
+        <Form.Select aria-label="categoryName" name="categoryName" onChange={handleChange} className="mb-3" value={wineInput?.categoryName} required>
+          <option value="">Select a Category</option>
+          {categories.map((category) => (
+            <option key={category.categoryName} value={category.categoryName}>
+              {category.categoryName}
+            </option>
+          ))}
+        </Form.Select>
       </FloatingLabel>
+
       <FloatingLabel controlId="floatingTextarea" label="WineDescription" className="mb-3">
         <Form.Control as="textarea" placeholder="Description" style={{ height: '100px' }} name="description" value={wineInput.description} onChange={handleChange} required />
       </FloatingLabel>

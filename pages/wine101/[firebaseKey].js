@@ -16,30 +16,48 @@ export default function ViewWine101() {
   }, [firebaseKey]);
 
   return (
-    <div className="mt-5 d-flex flex-wrap">
-      <div className="d-flex flex-column">
-        <img src={wine101Details?.articleImage} alt={wine101Details?.articleName} style={{ text: 'black', hight: '300px', width: 'flex' }} />
+    <div className="articleContainer">
+      <div
+        // className="card"
+        style={{
+          width: '1200px', margin: '50px', borderRadius: '2%', display: 'flex', alignContent: 'center',
+        }}
+      >
+        <div className="columnOne">
+          <img src={wine101Details.articleImage} className="card-img-top" alt={wine101Details.articleName} />
+        </div>
+        <div className="columnTwo">
+          <div
+            className="article-body"
+            style={{
+              height: '60px', margin: '1.5rem',
+            }}
+          >
+            <h2
+              className="articleName-title"
+              style={{
+                margin: 10,
+              }}
+            >{wine101Details.articleName}
+            </h2>
+          </div>
+          <div className="article-content">
+            <div
+              className="article-description"
+              style={{
+                margin: '1.5rem',
+              }}
+            > {wine101Details.context}
+            </div>
+          </div>
+          <div>
+            <h5>
+              <p> </p>
+              <a href={wine101Details?.articleLink} alt={wine101Details?.articleLink}>Link to Continue Reading</a>
+            </h5>
+          </div>
+        </div>
       </div>
-      <div className="text-white ms-5 details">
-        <h5>
-          <p>{wine101Details?.articleName}</p>
-        </h5>
-        <h6>
-          <p>{wine101Details?.context}</p>
-        </h6>
-        {/* <h4>
-          <Link>{wine101Details?.articleLink}</Link>
-        </h4> */}
-        <h5>
-          <p> </p>
-          <a href={wine101Details?.articleLink} alt={wine101Details?.articleLink}>Link to Continue Reading</a>
-        </h5>
-      </div>
-      {/*
-      <WineCard
-      wineObj={wineDetails}
-      onUpdate={onUpdateDetails} */}
-
     </div>
   );
 }

@@ -5,6 +5,9 @@ import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+// import CardActions from '@mui/material/CardActions';
+// import IconButton from '@mui/material/IconButton';
+// import { FavoriteIcon } from '@mui/icons-material/Favorite';
 import {
 // BsFillBookmarkPlusFill,
 // BsBookmarkDash,
@@ -49,11 +52,16 @@ function WineCard({ wineObj, onUpdate }) {
               : <BsBookmarkDash onClick={handleClick} />}
           </div> */}
         {/* {uid === wineObj?.uid ? ( */}
-        <div className="btn-group-vertical">
+        {/* <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+        </CardActions> */}
+        {/* <div className="btn-group-vertical">
           <p><Button className="card-text">{wineObj?.favorite ? '🤍' : ' ' }</Button> Favorite</p>
           <p><Button type="button" className="card-text">{wineObj?.wishList ? '🏷️' : ' ' }</Button> WishList</p>
           <p><Button className="card-text bold">{wineObj?.wineList ? '🏷️🏷️' : ' ' }</Button> WineList</p>
-        </div>
+        </div> */}
         {/* ) : null}  */}
         {/* <>
           <button type="button" className="icons btn btn-light">

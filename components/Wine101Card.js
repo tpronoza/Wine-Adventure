@@ -17,13 +17,13 @@ function Wine101Card({ wine101Obj, onUpdate }) {
 
   return (
 
-    <Card style={{ width: '35rem', margin: '10px', textAlign: 'left' }}>
+    <Card style={{ width: '25rem', margin: '10px', textAlign: 'left' }}>
       <Card.Img variant="top" src={wine101Obj?.articleImage} alt=".." style={{ height: '400px' }} />
       <Card.Body>
         <h5>
           <a href={`/wine101/${wine101Obj?.wine101FirebaseKey}`}>{wine101Obj?.articleName}</a>
         </h5>
-        <p className="card-text">{wine101Obj?.context}</p>
+        {/* <p className="card-text">{wine101Obj?.context}</p> */}
         {uid === wine101Obj.uid ? (
           <>
             <Link href={`/wine101/edit/${wine101Obj?.wine101FirebaseKey}`} passHref>
