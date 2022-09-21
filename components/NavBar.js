@@ -7,6 +7,7 @@ import {
   Navbar, Container, Nav, Button, NavDropdown,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
+import SearchBar from './SearchBar';
 // import { getWines } from '../api/wineData';
 // import { useAuth } from '../utils/context/authContext';
 // import WineCard from './WineCard';
@@ -40,11 +41,12 @@ export default function NavBar() {
         <Link passHref href="/">
           <Navbar.Brand>Wine Adventure</Navbar.Brand>
         </Link>
-
-        {/* <form className="d-flex search-me" role="search">
-          <input className="form-control me-2" type="search" placeholder="&#128269; Search" aria-label="Search" />
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form> */}
+        <SearchBar>
+          <form className="d-flex search-me" role="search">
+            <input className="form-control me-2" type="search" placeholder="&#128269; Search" aria-label="Search" />
+            <button className="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </SearchBar>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">

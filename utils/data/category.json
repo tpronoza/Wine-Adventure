@@ -1,17 +1,17 @@
 {
   "red": {
-    "categoryName": "red"
+    "categoryName": "Red"
   },
   "white": {
-    "categoryName": "white"
+    "categoryName": "White"
   },
   "rose": {
-    "categoryName": "rose"
+    "categoryName": "Rose"
   },
   "sparkling": {
-    "categoryName": "sparkling"    
+    "categoryName": "Sparkling"    
   },
   "dessert": {
-    "categoryName": "dessert"    
+    "categoryName": "Dessert"    
   }
 }
