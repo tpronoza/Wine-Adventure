@@ -31,7 +31,7 @@ function WineCard({ wineObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '35rem', margin: '10px', textAlign: 'left' }}>
+    <Card style={{ width: '33rem', margin: '10px', textAlign: 'left' }}>
       <Card.Img variant="top" src={wineObj?.winePicture} alt=".." style={{ height: '230px', width: '35%', margin: '10px' }} />
       <Card.Body>
         <h5>
@@ -57,11 +57,11 @@ function WineCard({ wineObj, onUpdate }) {
             <FavoriteIcon />
           </IconButton>
         </CardActions> */}
-        {/* <div className="btn-group-vertical">
-          <p><Button className="card-text">{wineObj?.favorite ? '🤍' : ' ' }</Button> Favorite</p>
-          <p><Button type="button" className="card-text">{wineObj?.wishList ? '🏷️' : ' ' }</Button> WishList</p>
-          <p><Button className="card-text bold">{wineObj?.wineList ? '🏷️🏷️' : ' ' }</Button> WineList</p>
-        </div> */}
+        <div className="btn-group-vertical">
+          <p><Button variant="link">{wineObj?.favorite ? '❤️' : '➕' }</Button> Favorite</p>
+          <p><Button variant="link">{wineObj?.wishList ? '📋' : '➕' }</Button> WishList</p>
+          <p><Button variant="link">{wineObj?.wineList ? '🍷' : '➕' }</Button> WineList</p>
+        </div>
         {/* ) : null}  */}
         {/* <>
           <button type="button" className="icons btn btn-light">
@@ -69,7 +69,7 @@ function WineCard({ wineObj, onUpdate }) {
           </button>
         </> */}
 
-        <p className="card-text">{wineObj?.description}</p>
+        {/* <p className="card-text">{wineObj?.description}</p> */}
         {uid === wineObj?.uid ? (
           <div className="btn-group-horizontal">
             <Link href={`/wine/edit/${wineObj?.wineFirebaseKey}`} passHref>

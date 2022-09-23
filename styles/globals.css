@@ -46,3 +46,19 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
+.wineColumnOne {
+  display: inline;
+  margin-right: 20px;
+}
+.wineColumnTwo {
+  display: inline;
+  margin-left: 20px;
+  width: 50rem;
+}
+
+.wineViewContainer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

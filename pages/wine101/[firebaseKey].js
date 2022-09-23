@@ -1,14 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { getSingleWine101 } from '../../api/wine101Data';
+import firebase from 'firebase/app';
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
+import { getSingleWine101, deleteWine101 } from '../../api/wine101Data';
 
 export default function ViewWine101() {
+  const { uid } = firebase.auth().currentUser;
   const [wine101Details, setWine101Details] = useState({});
   const router = useRouter();
 
   // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
+
+  const deleteThis101Wine = () => {
+    if (window.confirm(`Delete ${wine101Details.articleName}?`)) {
+      deleteWine101(wine101Details.wine101FirebaseKey);
+    }
+  };
 
   // TODO: make call to API layer to get the data
   useEffect(() => {
@@ -56,6 +66,16 @@ export default function ViewWine101() {
               <a href={wine101Details?.articleLink} alt={wine101Details?.articleLink}>Link to Continue Reading</a>
             </h5>
           </div>
+          {uid === wine101Details?.uid ? (
+            <div>
+              <Link href={`/wine101/edit/${wine101Details?.wine101FirebaseKey}`} passHref>
+                <Button variant="outline-info">EDIT</Button>
+              </Link>
+              <Link href="/wine101" passHref>
+                <Button variant="danger" onClick={deleteThis101Wine} className="m-2">DELETE</Button>
+              </Link>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
