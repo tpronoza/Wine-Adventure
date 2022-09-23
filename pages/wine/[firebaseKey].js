@@ -28,45 +28,72 @@ export default function ViewWine() {
   }, [firebaseKey]);
 
   return (
-    <div className="mt-5 d-flex flex-wrap">
-      <div className="d-flex flex-column">
-        <img src={wineDetails?.winePicture} alt={wineDetails?.countryName} style={{ hight: '300px', width: 'flex' }} />
-      </div>
-      <div className="text-white ms-5 details">
-        <h5>
-          <p>{wineDetails?.wineryName}</p>
-          {wineDetails?.yearProduced} {wineDetails?.wineName} by {wineDetails?.wineryName}
-        </h5>
-        <h4>
-          <p>{wineDetails?.countryName}</p>
-          <p>${wineDetails?.price}</p>
-        </h4>
-        <>
-          <p><Button className="card-text bold">{wineDetails?.favorite ? '🤍' : ' ' }</Button> Favorite</p>
-          <p><Button type="button" className="card-text">{wineDetails?.wishList ? '🏷️' : ' ' }</Button> WishList</p>
-          <p><Button className="card-text bold">{wineDetails?.wineList ? '🏷️🏷️' : ' ' }</Button> WineList</p>
-        </>
-      </div>
-      <p>{wineDetails?.description}</p>
-
-      {/* <WineCard
-      wineObj={wineDetails}
-      onUpdate={onUpdateDetails} /> */}
-      {uid === wineDetails?.uid ? (
-        <div>
-          <Link href={`/wine/edit/${wineDetails?.wineFirebaseKey}`} passHref>
-            <Button variant="outline-info">EDIT</Button>
-          </Link>
-          <Link href="/" passHref>
-            <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
-          </Link>
+    <div className="wineViewContainer">
+      <div
+      // className="card"
+        style={{
+          width: '1000px', margin: '50px', borderRadius: '2%', display: 'flex', alignContent: 'center',
+        }}
+      >
+        <div className="wineColumnOne">
+          <img src={wineDetails?.winePicture} alt={wineDetails?.countryName} style={{ hight: '400px', width: 'flex' }} />
         </div>
-      ) : null}
-      {/* <div className="text-white ms-5 details">
-        <h5>
-          {wineDetails?.wine101Obj?.favorite ? '🤍' : ''}
-        </h5>
-      </div> */}
+        <div className="wineColumnTwo">
+          <div
+            className="article-body"
+            style={{
+              height: '80px', margin: '1.5rem',
+            }}
+          >
+            <h2
+              className="wineryName"
+              style={{
+                margin: 10,
+              }}
+            >{wineDetails?.wineName}
+              <h5>
+                <p>{wineDetails?.countryName}</p>
+                {wineDetails?.yearProduced} {wineDetails?.wineName} by {wineDetails?.wineryName}
+              </h5>
+            </h2>
+          </div>
+          <div className="wineViewContainer-content">
+            <div
+              className="article-description"
+              style={{
+                margin: '1.5rem',
+              }}
+            > {wineDetails?.description}
+            </div>
+            <div
+              className="article-price"
+              style={{
+                margin: '1.5rem',
+              }}
+            >
+              <h3>
+                <p> $ {wineDetails?.price}</p>
+              </h3>
+            </div>
+          </div>
+          <>
+            <p> </p>
+            <p><Button variant="link">{wineDetails?.favorite ? '❤️' : '➕' }</Button> Favorite</p>
+            <p><Button variant="link">{wineDetails?.wishList ? '🔖' : '➕' }</Button> WishList</p>
+            <p><Button variant="link">{wineDetails?.wineList ? '🍷' : '➕' }</Button> WineList</p>
+          </>
+          {uid === wineDetails?.uid ? (
+            <div>
+              <Link href={`/wine/edit/${wineDetails?.wineFirebaseKey}`} passHref>
+                <Button variant="outline-info">EDIT</Button>
+              </Link>
+              <Link href="/" passHref>
+                <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
+              </Link>
+            </div>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 }

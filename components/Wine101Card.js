@@ -17,7 +17,7 @@ function Wine101Card({ wine101Obj, onUpdate }) {
 
   return (
 
-    <Card style={{ width: '25rem', margin: '10px', textAlign: 'left' }}>
+    <Card style={{ width: '22rem', margin: '10px', textAlign: 'left' }}>
       <Card.Img variant="top" src={wine101Obj?.articleImage} alt=".." style={{ height: '400px' }} />
       <Card.Body>
         <h5>
