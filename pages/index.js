@@ -52,7 +52,7 @@ function Home() {
       </div>
       <div className="text-center my-4">
         <Link href="/wine/new" passHref>
-          <Button>Add A Wine</Button>
+          <Button type="button" className="btn btn-secondary btn-sml copy-btn">Add A Wine</Button>
         </Link>
         <div className="d-flex flex-wrap">
           {/* TODO: map over wines here using WineCard component */}

@@ -144,7 +144,7 @@ function WineForm({ wineObj }) {
         }))}
       />
       {/* <div className="btn-group-vertical"> */}
-      <Button type="submit">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine</Button>
+      <Button type="submit" className="btn btn-secondary btn-sml copy-btn">{wineObj?.wineFirebaseKey ? 'Update' : 'Create'} Wine</Button>
       {/* </div> */}
     </Form>
   );

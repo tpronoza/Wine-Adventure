@@ -85,10 +85,10 @@ export default function ViewWine() {
           {uid === wineDetails?.uid ? (
             <div>
               <Link href={`/wine/edit/${wineDetails?.wineFirebaseKey}`} passHref>
-                <Button variant="outline-info">EDIT</Button>
+                <Button variant="outline-primary">EDIT</Button>
               </Link>
               <Link href="/" passHref>
-                <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
+                <Button variant="outline-danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
               </Link>
             </div>
           ) : null}
