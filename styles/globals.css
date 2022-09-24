@@ -2,11 +2,22 @@
 
 html,
 body {
+  /* background-image: url('../public/hand-painted-watercolor-pastel-sky-background_23-2148902771.webp');
+  background-size: 1450px; */
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+/* .background-image {
+  background-image: url('../public/wineimg_background.jpeg');
+  height: 800px;
+  background-size: cover;
+  background-repeat: repeat-y;
+  width: 100%;
+  margin-left: 0;
+} */
 
 a {
   color: inherit;
@@ -19,7 +30,7 @@ a {
 }
 
 body {
-  background-color: #d5c0c0;
+  background-color: #d0bcbc;
 }
 
 .navbar {
@@ -30,6 +41,10 @@ body {
   z-index: 1; */
   background-color: rgb(51, 2, 2);
 }
+
+/* .footer {
+  background-image: url('../public/docs-dark@tinypng.1bbe175e.png');
+} */
 
 .columnOne {
   display: inline;

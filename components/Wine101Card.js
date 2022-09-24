@@ -27,9 +27,9 @@ function Wine101Card({ wine101Obj, onUpdate }) {
         {uid === wine101Obj.uid ? (
           <>
             <Link href={`/wine101/edit/${wine101Obj?.wine101FirebaseKey}`} passHref>
-              <Button variant="outline-info">EDIT</Button>
+              <Button variant="outline-info" type="button">EDIT</Button>
             </Link>
-            <Button variant="danger" onClick={deleteThisWine101} className="m-2">DELETE</Button>
+            <Button variant="outline-danger" onClick={deleteThisWine101} className="m-2">DELETE</Button>
           </>
         ) : null}
       </Card.Body>

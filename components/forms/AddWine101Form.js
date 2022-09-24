@@ -57,7 +57,7 @@ function Wine101Form({ wine101Obj }) {
         <Form.Control type="text" placeholder="Enter Wine Article Link" name="articleLink" value={formInput.articleLink} onChange={handleChange} required />
       </FloatingLabel>
 
-      <Button type="submit">{wine101Obj?.wine101FirebaseKey ? 'Update' : 'Create'} Wine Article</Button>
+      <Button type="submit" className="btn btn-secondary btn-sml copy-btn">{wine101Obj?.wine101FirebaseKey ? 'Update' : 'Create'} Wine Article</Button>
     </Form>
   );
 }

@@ -31,9 +31,23 @@ function WineCard({ wineObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '33rem', margin: '10px', textAlign: 'left' }}>
-      <Card.Img variant="top" src={wineObj?.winePicture} alt=".." style={{ height: '230px', width: '35%', margin: '10px' }} />
-      <Card.Body>
+    <Card style={{ width: '22rem', margin: '10px', textAlign: 'left' }}>
+      <Card.Img
+        variant="top"
+        src={wineObj?.winePicture}
+        alt=".."
+        style={{
+          height: '250px', width: '55%', margin: '50px', display: 'inline', alignContent: 'center',
+        }}
+      />
+      {/* style={{
+          width: '1200px', margin: '50px', borderRadius: '2%', display: 'flex', alignContent: 'center',
+        }} */}
+      <Card.Body
+        style={{
+          margin: '15px', display: 'inline', alignContent: 'center',
+        }}
+      >
         <h5>
           <a href={`/wine/${wineObj?.wineFirebaseKey}`}>{wineObj?.wineName} {wineObj?.yearProduced}</a>
           <p key="{wineObj?.wineryName}">{wineObj?.wineryName}</p>
@@ -57,11 +71,7 @@ function WineCard({ wineObj, onUpdate }) {
             <FavoriteIcon />
           </IconButton>
         </CardActions> */}
-        <div className="btn-group-vertical">
-          <p><Button variant="link">{wineObj?.favorite ? '❤️' : '➕' }</Button> Favorite</p>
-          <p><Button variant="link">{wineObj?.wishList ? '📋' : '➕' }</Button> WishList</p>
-          <p><Button variant="link">{wineObj?.wineList ? '🍷' : '➕' }</Button> WineList</p>
-        </div>
+
         {/* ) : null}  */}
         {/* <>
           <button type="button" className="icons btn btn-light">
@@ -69,13 +79,18 @@ function WineCard({ wineObj, onUpdate }) {
           </button>
         </> */}
 
-        {/* <p className="card-text">{wineObj?.description}</p> */}
+        {/* <p className="card-text">{wineObj?.description}</p>
+        <div className="btn-group-vertical">
+          <p><Button variant="link">{wineObj?.favorite ? '❤️' : '➕' }</Button> Favorite</p>
+          <p><Button variant="link">{wineObj?.wishList ? '📋' : '➕' }</Button> WishList</p>
+          <p><Button variant="link">{wineObj?.wineList ? '🍷' : '➕' }</Button> WineList</p>
+        </div> */}
         {uid === wineObj?.uid ? (
           <div className="btn-group-horizontal">
             <Link href={`/wine/edit/${wineObj?.wineFirebaseKey}`} passHref>
               <Button variant="outline-info">EDIT</Button>
             </Link>
-            <Button variant="danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
+            <Button variant="outline-danger" onClick={deleteThisWine} className="m-2">DELETE</Button>
           </div>
         ) : null}
 

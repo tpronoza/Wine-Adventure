@@ -21,7 +21,7 @@ export default function Wine101() {
   return (
     <div className="text-center my-4">
       <Link href="/wine101/new" passHref>
-        <Button>Add New Wine Article</Button>
+        <Button type="button" className="btn btn-secondary btn-sml copy-btn">Add New Wine Article</Button>
       </Link>
       <div className="d-flex flex-wrap">
         {wines101.map((wine101Obj) => (
